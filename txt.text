@@ -1,3 +1,8 @@
 /opt/homebrew/bin/python3.12 -m venv .venv
 source .venv/bin/activate 
 which python3 
+
+
+
+
+/Users/vintrinh/Desktop/vincent_personal_projects/ml-roadmap/06-applied-projects/02-recommendation-system/.venv/bin/python
