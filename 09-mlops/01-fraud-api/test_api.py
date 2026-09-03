@@ -11,7 +11,8 @@ Run this with: python3 test_api.py
 
 import requests
 
-URL = "http://127.0.0.1:8000/predict"
+#URL = "http://127.0.0.1:8000/predict"
+URL = "https://ml-roadmap.onrender.com/predict"
 
 # build a sample transaction dict with all 30 fields (Time, V1-V28, Amount).
 # You can pull one real row directly from the dataset for a realistic test -- e.g., grab

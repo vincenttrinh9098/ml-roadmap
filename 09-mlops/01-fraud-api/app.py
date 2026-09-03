@@ -16,8 +16,17 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+import logging
 
-# TODO: load your serialized model and scaler
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    filename="api.log",
+    filemode="a"
+)
+logger = logging.getLogger("fraud-api")
+
+# load the serialized model and scaler
 # model = joblib.load("fraud_model.joblib")
 # scaler = joblib.load("scaler.joblib")
 # Loading happens ONCE, at server startup -- not per-request. This is a big part of why
@@ -78,6 +87,7 @@ def health():
 
 @app.post("/predict")
 def predict(transaction: Transaction):
+    logger.info(f"Received prediction request, Amount={transaction.Amount}")
 
     # 1. Convert Pydantic object → dictionary
     transaction_dict = transaction.model_dump()
@@ -112,6 +122,8 @@ def predict(transaction: Transaction):
 
     # 5. Apply your threshold
     y_pred = (y_pred_prob >= THRESHOLD).astype(int)
+
+    logger.info(f"Prediction complete: fraud_probability={y_pred_prob[0]:.4f}, is_fraud={bool(y_pred[0])}")
 
     # 6. Return JSON-friendly values
     return {
