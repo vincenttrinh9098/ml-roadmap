@@ -1,0 +1,16 @@
+# Virtual environment -- never commit this, it's large, platform-specific, and
+# fully reproducible from requirements.txt
+.venv/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Log file -- grows continuously and contains runtime data, not source code
+api.log
+
+# macOS filesystem noise
+.DS_Store
+
+# pytest cache
+.pytest_cache/

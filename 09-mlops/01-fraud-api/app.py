@@ -84,7 +84,6 @@ def health():
     """A basic liveness check -- confirms the API is running at all, no model logic involved.
     Real production systems check this endpoint constantly (every few seconds) to detect
     if a deployed service has crashed."""
-    # TODO: return something like {"status": "ok"}
     return {"status": "ok"}
 
 
