@@ -1,0 +1,23 @@
+# requirements.txt
+#
+# Stage 9: exact dependencies your API needs to run, with pinned versions.
+#
+# Why this file exists at all: your local .venv has whatever versions happened to install
+# when you ran pip earlier. Docker needs an explicit, written-down list so it can install
+# the SAME versions inside the container, every time, on any machine -- otherwise "works on
+# my machine" bugs creep in silently.
+#
+#  fill in the version numbers your own venv is actually using. Find them by running,
+# in your activated venv:
+#   python3 -m pip freeze | grep -iE "fastapi|uvicorn|pydantic|joblib|scikit-learn|xgboost|pandas|numpy"
+# Copy those exact lines below (name==version format), replacing the placeholders.
+
+fastapi==0.141.1
+joblib==1.6.0
+numpy==2.5.2
+pandas==3.0.5
+pydantic==2.13.5
+pydantic_core==2.46.5
+scikit-learn==1.9.0
+uvicorn==0.52.4
+xgboost==3.4.1

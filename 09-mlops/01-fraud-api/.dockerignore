@@ -1,0 +1,13 @@
+# .dockerignore
+#
+# Stage 9: files Docker should NEVER copy into the image -- keeps the image small and
+# avoids accidentally shipping your entire local venv (which can be hundreds of MB and
+# is platform-specific anyway; the image installs its own clean dependencies instead).
+
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+*.ipynb
+.ipynb_checkpoints/
