@@ -1,0 +1,2 @@
+2026-09-03 14:02:56,639 | INFO | Received prediction request, Amount=1.0
+2026-09-03 14:02:56,646 | INFO | Prediction complete: fraud_probability=0.8245, is_fraud=True

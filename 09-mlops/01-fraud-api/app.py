@@ -21,8 +21,11 @@ import logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
-    filename="api.log",
-    filemode="a"
+    handlers=[
+        logging.FileHandler("api.log"),
+        logging.StreamHandler()
+    ],
+    force=True
 )
 logger = logging.getLogger("fraud-api")
 
